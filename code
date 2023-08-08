@@ -1,0 +1,356 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Book_Tickets
+{
+private:
+    int choice, choice1, choice2, price=0, ID;
+    string ticket, travel_by, s_city;
+
+public:
+    Book_Tickets() {}
+    void getInfo(void)
+    {
+        cout << "Enter Your ID : ";
+        cin >> ID;
+        string city[4] = {"Dhaka", "Khulna", "Chittagong", "Rajshahi"};
+        cout << "Select travel type : \n";
+        cout << "1. Airplane \n";
+        cout << "2. Train\n";
+        cout << "3. Bus\n\n";
+        cout << "Enter your choice : ";
+        cin >> choice;
+        
+        switch (choice)
+        {
+        case 1:
+        {
+            travel_by = "Airplane";
+            cout << "Available cities are : \n";
+            for (int i = 0; i < 4; i++)
+            {
+                cout << (i + 1) << ". Travel to " << city[i] << ".\n";
+            }
+            cout << "\n";
+            cout << "Enter city : ";
+            cin >> choice1;
+            s_city = city[choice1];
+            cout << "Available flights : \n";
+            cout << "1. BD-456 08-08-2023 12:30PM BDT.5000\n";
+            cout << "2. BD-756 14-08-2023 09:30AM BDT.8000\n";
+            cout << "3. BD-586 09-08-2023 00:30AM BDT.6000\n";
+            cout << "Enter your wanted ticket : ";
+            cin >> choice2;
+            if (choice2 == 1)
+            {
+                ticket = "BD-456 08-08-2023 12:30PM";
+                price = 5000;
+                cout << "Your ticket is booked.\n";
+            }
+            else if (choice2 == 2)
+            {
+                ticket = "BD-756 14-08-2023 09:30AM";
+                price = 8000;
+                cout << "Your ticket is booked.\n";
+            }
+            else
+            {
+                ticket = "BD-586 09-08-2023 00:30AM";
+                price = 6000;
+                cout << "Your ticket is booked.\n";
+            }
+            break;
+        }
+
+        case 2:
+        {
+            travel_by = "Train";
+            cout << "Available cities are : \n";
+            for (int i = 0; i < 4; i++)
+            {
+                cout << (i + 1) << ". Travel to " << city[i] << ".\n";
+            }
+            cout << "\n";
+            cout << "Enter city : ";
+            cin >> choice1;
+            s_city = city[choice1];
+            cout << "Available Tickets : \n";
+            cout << "1. Sundarban Express 08-08-2023 12:30PM BDT.200\n";
+            cout << "2. Chitra Express 14-08-2023 09:30AM BDT.250\n";
+            cout << "3. Godhuli Express 09-08-2023 00:30AM BDT.310\n";
+            cout << "Enter your wanted ticket : ";
+            cin >> choice2;
+            if (choice2 == 1)
+            {
+                ticket = "Sundarban Express 08-08-2023 12:30PM";
+                price = 200;
+                cout << "Your ticket is booked.\n";
+            }
+            else if (choice2 == 2)
+            {
+                ticket = "Chitra Express 14-08-2023 09:30AM";
+                price = 250;
+                cout << "Your ticket is booked.\n";
+            }
+            else
+            {
+                ticket = "Godhuli Express 09-08-2023 00:30AM";
+                price = 310;
+                cout << "Your ticket is booked.\n";
+            }
+            break;
+        }
+
+        case 3:
+        {
+            travel_by = "Bus";
+            cout << "Available cities are : \n";
+            for (int i = 0; i < 4; i++)
+            {
+                cout << (i + 1) << ". Travel to " << city[i] << ".\n";
+            }
+            cout << "\n";
+            cout << "Enter city : ";
+            cin >> choice1;
+            s_city = city[choice1];
+            cout << "Available Tickets : \n";
+            cout << "1. GREEN LINE 08-08-2023 12:30PM BDT.2000\n";
+            cout << "2. HANIF PARIBAHAN 14-08-2023 09:30AM BDT.1200\n";
+            cout << "3. SHAMOLY PARIBAHAN 09-08-2023 00:30AM BDT.700\n";
+            cout << "Enter your wanted ticket : ";
+            cin >> choice2;
+            if (choice2 == 1)
+            {
+                ticket = "GREEN LINE 08-08-2023 12:30PM";
+                price = 2000;
+                cout << "Your ticket is booked.\n";
+            }
+            else if (choice2 == 2)
+            {
+                ticket = "HANIF PARIBAHAN 14-08-2023 09:30AM";
+                price = 1200;
+                cout << "Your ticket is booked.\n";
+            }
+            else
+            {
+                ticket = "SHAMOLY PARIBAHAN 09-08-2023 00:30AM";
+                price = 700;
+                cout << "Your ticket is booked.\n";
+            }
+            break;
+        }
+        }
+    }
+    friend class Total_Billing;
+};
+
+class Book_Hotels
+{
+private:
+    int choice1, price=0;
+    string hotel;
+
+public:
+    Book_Hotels() {}
+    void book_hotel()
+    {
+        cout << "Available hotels are : \n";
+        cout << "1. Six Seasons Hotel : 4th floor, 2 room, price - BDT.12000\n";
+        cout << "2. Long Beach Hotel : 3rd floor, 1 room, price - BDT.5000\n";
+        cout << "3. InterContinental Hotel : 7th floor, 2 room, price - BDT.15000\n";
+        cout << "4. Hotel Ornate : 9th floor, 1 room, price - BDT.6500\n\n";
+        cout << "Enter your choice : ";
+        cin >> choice1;
+        if (choice1 == 1)
+        {
+            hotel = "Six Seasons Hotel : 4th floor, 2 room";
+            price = 12000;
+            cout << "Your Hotel is booked.\n";
+        }
+        else if (choice1 == 2)
+        {
+            hotel = "Long Beach Hotel : 3rd floor, 1 room";
+            price = 5000;
+            cout << "Your Hotel is booked.\n";
+        }
+        else if (choice1 == 3)
+        {
+            hotel = "InterContinental Hotel : 7th floor, 2 room";
+            price = 15000;
+            cout << "Your Hotel is booked.\n";
+        }
+        else
+        {
+            hotel = "Hotel Ornate : 9th floor, 1 room";
+            price = 6500;
+            cout << "Your Hotel is booked.\n";
+        }
+    }
+    friend class Total_Billing;
+};
+
+class Book_Cabs
+{
+private:
+    int choice1, n, choice2, price=0;
+    string choosen1, choosen2;
+
+public:
+    Book_Cabs() {}
+    void book_cab()
+    {
+        cout << "Available cabs are : \n";
+        cout << "1. Two Wheels \n";
+        cout << "2. Four Wheels \n";
+        cout << "Enter your choice : ";
+        cin >> choice1;
+        if (choice1 == 1)
+        {
+            choosen1 = "Two Wheels";
+        }
+        else
+        {
+            choosen1 = "Four Wheels";
+        }
+        cout << "1. Premium pack BDT.50 per KM\n";
+        cout << "2. Normal pack BDT.35 per KM\n";
+        cout << "Enter your choice : ";
+        cin >> choice2;
+        cout << "How many KM to travel : ";
+        cin >> n;
+        if (choice2 == 1)
+        {
+            choosen2 = "Premium pack BDT.50 per KM";
+            price = n * 50;
+        }
+        else
+        {
+            choosen2 = "Normal pack BDT.35 per KM";
+            price = n * 35;
+        }
+        cout << "Your cab is booked. Thank you.\n";
+    }
+    friend class Total_Billing;
+};
+
+class Total_Billing
+{
+private:
+    int bill=0;
+
+public:
+    Total_Billing() {}
+    void total_Billing(Book_Tickets &t, Book_Hotels &h, Book_Cabs &c)
+    {
+        if (t.price) {
+        cout << "Your Total Bill is: \n";
+        cout << "_____________________________________________\n";
+        cout << "Customer ID : " << t.ID << endl;
+        cout << "Booked Tickets : \n";
+        cout << "City : " << t.s_city << endl;
+        cout << "Travelling by : " << t.travel_by << endl;
+        cout << "Ticket : " << t.ticket << endl;
+        cout << "Price : BDT." << t.price << endl;
+        }
+        if(h.price) {
+        cout << "_____________________________________________\n";
+        cout << "Booked Hotel : " << h.hotel << endl;
+        cout << "Price : BDT." << h.price << endl;
+        }
+        if(c.price) {
+        cout << "_____________________________________________\n";
+        cout << "Booked Cab : \n";
+        cout << c.choosen1 << " & " << c.choosen2 << endl;
+        cout << "Travelling " << c.n << " KM" << endl;
+        cout << "Price : BDT." << c.price << endl;
+        }
+        bill = t.price + h.price + c.price;
+        cout << "_____________________________________________\n";
+        cout << "Total Cost of your jouney : BDT." << bill << endl;
+    }
+};
+
+Book_Tickets t;
+Book_Hotels h;
+Book_Cabs c;
+Total_Billing b;
+
+void mainMenu()
+{
+    int choice;
+    char back;
+    cout << "Main Menu\n";
+    cout << "_____________________________________________\n";
+    cout << "Select your choices : \n";
+    cout << "1. Book Tickets." << endl;
+    cout << "2. Book Hotels. " << endl;
+    cout << "3. Book Cabs. " << endl;
+    cout << "4. Total Billings." << endl;
+    cout << "_____________________________________________\n\n";
+    cout << "Enter your choice : ";
+    cin >> choice;
+    fflush(stdin);
+
+    switch (choice)
+    {
+
+    case 1:
+    {
+        cout << "_____________________________________________\n";
+        cout << "\nFill Ticket Details : " << endl;
+        t.getInfo();
+        fflush(stdin);
+        cout << "Press any key to go back to the main menu : ";
+        back = getchar();
+        if (back)
+        {
+            cout << endl;
+            mainMenu();
+        }
+        break;
+    }
+    case 2:
+    {
+        cout << "_____________________________________________\n";
+        cout << "\nFill Hotel Details : " << endl;
+        h.book_hotel();
+        fflush(stdin);
+        cout << "Press any key to go back to the main menu : ";
+        back = getchar();
+        if (back)
+        {
+            cout << endl;
+            mainMenu();
+        }
+        break;
+    }
+    case 3:
+    {
+        cout << "_____________________________________________\n";
+        cout << "\nFill Cab Details : " << endl;
+        c.book_cab();
+        fflush(stdin);
+        cout << "Press any key to go back to the main menu : ";
+        back = getchar();
+        if (back)
+        {
+            cout << endl;
+            mainMenu();
+        }
+        break;
+    }
+    case 4:
+    {
+        cout << "_____________________________________________\n";
+        cout << "\nTotal Billing Details : " << endl;
+        b.total_Billing(t, h, c);
+    }
+    }
+}
+
+int main()
+{
+    mainMenu();
+    return 0;
+}
